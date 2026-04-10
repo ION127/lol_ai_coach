@@ -1,0 +1,44 @@
+# ── Web Framework ─────────────────────────────────────────────────
+fastapi==0.115.5
+uvicorn[standard]==0.32.1
+python-multipart==0.0.12        # Form data 파싱
+
+# ── Database ──────────────────────────────────────────────────────
+sqlalchemy[asyncio]==2.0.36
+asyncpg==0.30.0                 # PostgreSQL async 드라이버 (FastAPI)
+psycopg2-binary==2.9.10         # PostgreSQL sync 드라이버 (Celery)
+alembic==1.14.0                 # DB 마이그레이션
+
+# ── Task Queue ────────────────────────────────────────────────────
+celery[redis]==5.4.0
+redis==5.2.1
+
+# ── Auth ──────────────────────────────────────────────────────────
+python-jose[cryptography]==3.3.0  # JWT
+passlib[bcrypt]==1.7.4            # 비밀번호 해싱
+
+# ── Config ────────────────────────────────────────────────────────
+pydantic-settings==2.6.1
+python-dotenv==1.0.1
+
+# ── AWS ───────────────────────────────────────────────────────────
+boto3==1.35.68                  # S3 Presigned URL
+
+# ── LLM ───────────────────────────────────────────────────────────
+anthropic==0.40.0
+
+# ── HTTP ──────────────────────────────────────────────────────────
+httpx==0.28.1                   # 비동기 HTTP 클라이언트 (Riot API)
+requests==2.32.3                # 동기 HTTP (Celery 워커)
+
+# ── Monitoring / Security ─────────────────────────────────────────
+slowapi==0.1.9                  # Rate limiting
+sentry-sdk[fastapi]==2.19.2     # 에러 추적
+
+# ── Dev / Test ────────────────────────────────────────────────────
+pytest==8.3.4
+pytest-asyncio==0.24.0
+pytest-cov==6.0.0
+httpx==0.28.1                   # AsyncClient (TestClient 대체)
+factory-boy==3.3.1              # 테스트 픽스처
+aiosqlite==0.20.0               # 인메모리 SQLite (테스트용 DB)
